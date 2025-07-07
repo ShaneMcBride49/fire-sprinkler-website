@@ -14,7 +14,7 @@ export function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-background sticky top-0 z-40 w-full border-b">
+    <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo and Desktop Nav */}
         <div className="flex items-center space-x-4">
@@ -26,7 +26,7 @@ export function SiteHeader() {
               height={64}
               className="h-12 w-auto sm:h-16"
             />
-            <span className="font-bold text-lg sm:text-xl">{siteConfig.name}</span>
+            <span className="text-lg font-bold sm:text-xl">{siteConfig.name}</span>
           </Link>
           {/* Desktop Navigation */}
           <div className="hidden md:block">
@@ -81,15 +81,15 @@ export function SiteHeader() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t bg-background">
-          <div className="container px-4 py-4 space-y-4">
+        <div className="border-t bg-background md:hidden">
+          <div className="container space-y-4 px-4 py-4">
             {/* Mobile Navigation */}
             <nav className="flex flex-col space-y-2">
               {siteConfig.mainNav.map((item, index) => (
                 <Link
                   key={index}
                   href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground py-2"
+                  className="py-2 text-sm font-medium text-muted-foreground hover:text-foreground"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.title}
@@ -98,7 +98,7 @@ export function SiteHeader() {
             </nav>
             
             {/* Mobile Contact Info */}
-            <div className="pt-4 border-t space-y-3">
+            <div className="space-y-3 border-t pt-4">
               <Link 
                 href={siteConfig.links.phone} 
                 className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-foreground"

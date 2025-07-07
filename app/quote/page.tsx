@@ -66,26 +66,26 @@ ${formData.description}
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Header */}
-      <div className="bg-white dark:bg-slate-950 border-b">
+      <div className="border-b bg-white dark:bg-slate-950">
         <div className="container mx-auto px-4 py-4 sm:py-6">
           <Link 
             href="/" 
-            className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-4"
+            className="mb-4 inline-flex items-center text-sm text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Link>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Get Your Quote</h1>
-          <p className="text-muted-foreground mt-2 text-sm sm:text-base">
-            Tell us about your project and we'll provide a comprehensive quote for your fire protection needs.
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Get Your Quote</h1>
+          <p className="mt-2 text-sm text-muted-foreground sm:text-base">
+            Tell us about your project and we&apos;ll provide a comprehensive quote for your fire protection needs.
           </p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-8 sm:py-12">
-        <div className="grid gap-6 lg:gap-8 lg:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
           {/* Contact Info - Mobile First */}
-          <div className="lg:col-span-1 order-2 lg:order-1">
+          <div className="order-2 lg:col-span-1 lg:order-1">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg sm:text-xl">Contact Information</CardTitle>
@@ -95,33 +95,33 @@ ${formData.description}
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <Phone className="h-5 w-5 flex-shrink-0 text-blue-600" />
                   <div className="min-w-0">
-                    <p className="font-medium text-sm sm:text-base">Phone</p>
+                    <p className="text-sm font-medium sm:text-base">Phone</p>
                     <Link 
                       href={siteConfig.links.phone}
-                      className="text-sm text-muted-foreground hover:text-foreground break-all"
+                      className="break-all text-sm text-muted-foreground hover:text-foreground"
                     >
                       817-821-1877
                     </Link>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <Mail className="h-5 w-5 flex-shrink-0 text-blue-600" />
                   <div className="min-w-0">
-                    <p className="font-medium text-sm sm:text-base">Email</p>
+                    <p className="text-sm font-medium sm:text-base">Email</p>
                     <Link 
                       href={`mailto:${siteConfig.links.email}`}
-                      className="text-sm text-muted-foreground hover:text-foreground break-all"
+                      className="break-all text-sm text-muted-foreground hover:text-foreground"
                     >
                       {siteConfig.links.email}
                     </Link>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Building className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <Building className="h-5 w-5 flex-shrink-0 text-blue-600" />
                   <div className="min-w-0">
-                    <p className="font-medium text-sm sm:text-base">Service Area</p>
+                    <p className="text-sm font-medium sm:text-base">Service Area</p>
                     <p className="text-sm text-muted-foreground">
                       Nationwide
                     </p>
@@ -147,7 +147,7 @@ ${formData.description}
           </div>
 
           {/* Quote Form - Mobile First */}
-          <div className="lg:col-span-2 order-1 lg:order-2">
+          <div className="order-1 lg:col-span-2 lg:order-2">
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg sm:text-xl">Project Information</CardTitle>
@@ -160,7 +160,7 @@ ${formData.description}
                   {/* Contact Information */}
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="sm:col-span-2 sm:col-start-1">
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
+                      <label htmlFor="name" className="mb-2 block text-sm font-medium">
                         Full Name *
                       </label>
                       <input
@@ -170,11 +170,11 @@ ${formData.description}
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
+                      <label htmlFor="email" className="mb-2 block text-sm font-medium">
                         Email Address *
                       </label>
                       <input
@@ -184,11 +184,11 @@ ${formData.description}
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                      <label htmlFor="phone" className="mb-2 block text-sm font-medium">
                         Phone Number *
                       </label>
                       <input
@@ -198,11 +198,11 @@ ${formData.description}
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                       />
                     </div>
                     <div className="sm:col-span-2">
-                      <label htmlFor="company" className="block text-sm font-medium mb-2">
+                      <label htmlFor="company" className="mb-2 block text-sm font-medium">
                         Company Name
                       </label>
                       <input
@@ -211,7 +211,7 @@ ${formData.description}
                         name="company"
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                       />
                     </div>
                   </div>
@@ -219,7 +219,7 @@ ${formData.description}
                   {/* Project Details */}
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="sm:col-span-2">
-                      <label htmlFor="projectType" className="block text-sm font-medium mb-2">
+                      <label htmlFor="projectType" className="mb-2 block text-sm font-medium">
                         Project Type *
                       </label>
                       <select
@@ -228,7 +228,7 @@ ${formData.description}
                         required
                         value={formData.projectType}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                       >
                         <option value="">Select project type</option>
                         <option value="new-installation">New Installation</option>
@@ -241,7 +241,7 @@ ${formData.description}
                       </select>
                     </div>
                     <div className="sm:col-span-2">
-                      <label htmlFor="buildingType" className="block text-sm font-medium mb-2">
+                      <label htmlFor="buildingType" className="mb-2 block text-sm font-medium">
                         Building Type *
                       </label>
                       <select
@@ -250,7 +250,7 @@ ${formData.description}
                         required
                         value={formData.buildingType}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                       >
                         <option value="">Select building type</option>
                         <option value="hotel-3-story">3-Story Hotel</option>
@@ -263,7 +263,7 @@ ${formData.description}
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="floors" className="block text-sm font-medium mb-2">
+                      <label htmlFor="floors" className="mb-2 block text-sm font-medium">
                         Number of Floors
                       </label>
                       <input
@@ -273,11 +273,11 @@ ${formData.description}
                         min="1"
                         value={formData.floors}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                       />
                     </div>
                     <div>
-                      <label htmlFor="squareFootage" className="block text-sm font-medium mb-2">
+                      <label htmlFor="squareFootage" className="mb-2 block text-sm font-medium">
                         Square Footage
                       </label>
                       <input
@@ -287,11 +287,11 @@ ${formData.description}
                         min="1"
                         value={formData.squareFootage}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                       />
                     </div>
                     <div className="sm:col-span-2">
-                      <label htmlFor="timeline" className="block text-sm font-medium mb-2">
+                      <label htmlFor="timeline" className="mb-2 block text-sm font-medium">
                         Project Timeline
                       </label>
                       <select
@@ -299,7 +299,7 @@ ${formData.description}
                         name="timeline"
                         value={formData.timeline}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                       >
                         <option value="">Select timeline</option>
                         <option value="immediate">Immediate (Emergency)</option>
@@ -314,7 +314,7 @@ ${formData.description}
 
                   {/* Project Description */}
                   <div>
-                    <label htmlFor="description" className="block text-sm font-medium mb-2">
+                    <label htmlFor="description" className="mb-2 block text-sm font-medium">
                       Project Description *
                     </label>
                     <textarea
@@ -325,7 +325,7 @@ ${formData.description}
                       value={formData.description}
                       onChange={handleInputChange}
                       placeholder="Please describe your project, current fire protection system status, specific requirements, and any other relevant details..."
-                      className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none text-sm sm:text-base"
+                      className="w-full resize-none rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base"
                     />
                   </div>
 
@@ -336,12 +336,12 @@ ${formData.description}
                       disabled={isSubmitting}
                       className={buttonVariants({ 
                         size: "lg", 
-                        className: "w-full sm:w-auto px-8 py-3"
+                        className: "w-full px-8 py-3 sm:w-auto" 
                       })}
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                          <div className="mr-2 h-4 w-4 animate-spin rounded-full border-b-2 border-white" />
                           Sending...
                         </>
                       ) : (

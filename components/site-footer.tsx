@@ -18,9 +18,9 @@ export function SiteFooter() {
                 height={32}
                 className="h-8 w-auto"
               />
-              <span className="font-bold text-xl">{siteConfig.name}</span>
+              <span className="text-xl font-bold">{siteConfig.name}</span>
             </div>
-            <p className="text-slate-300 text-sm">
+            <p className="text-sm text-slate-300">
               Specialized fire protection services for three-, four-, and five-story hotels. 
               Expert installation, maintenance, and compliance solutions.
             </p>
@@ -36,28 +36,28 @@ export function SiteFooter() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Services</h3>
+            <h3 className="text-lg font-semibold">Services</h3>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
-                <Link href="/#services" className="hover:text-white flex items-center space-x-2">
+                <Link href="/#services" className="flex items-center space-x-2 hover:text-white">
                   <Shield className="h-4 w-4" />
                   <span>Installation & Design</span>
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-white flex items-center space-x-2">
+                <Link href="/#services" className="flex items-center space-x-2 hover:text-white">
                   <Wrench className="h-4 w-4" />
                   <span>Routine Inspections</span>
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-white flex items-center space-x-2">
+                <Link href="/#services" className="flex items-center space-x-2 hover:text-white">
                   <Phone className="h-4 w-4" />
                   <span>Emergency Support</span>
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-white flex items-center space-x-2">
+                <Link href="/#services" className="flex items-center space-x-2 hover:text-white">
                   <FileText className="h-4 w-4" />
                   <span>Compliance Consulting</span>
                 </Link>
@@ -67,7 +67,7 @@ export function SiteFooter() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Quick Links</h3>
+            <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
                 <Link href="/" className="hover:text-white">
@@ -94,10 +94,10 @@ export function SiteFooter() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Contact Info</h3>
+            <h3 className="text-lg font-semibold">Contact Info</h3>
             <div className="space-y-3 text-sm text-slate-300">
               <div className="flex items-start space-x-3">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
                 <div>
                   <p>123 Fire Safety Way</p>
                   <p>Safety City, SC 12345</p>
@@ -119,8 +119,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="mt-12 border-t border-slate-800 pt-8">
+          <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
             <p className="text-sm text-slate-400">
               © 2024 {siteConfig.name}. All rights reserved.
             </p>
