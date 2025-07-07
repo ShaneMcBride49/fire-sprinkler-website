@@ -1,16 +1,22 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
+import { useState } from "react"
+import { Menu, X, Phone, Mail } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Phone, Mail } from "lucide-react"
 
 export function SiteHeader() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   return (
     <header className="bg-background sticky top-0 z-40 w-full border-b">
-      <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+      <div className="container flex h-16 items-center justify-between px-4">
+        {/* Logo and Desktop Nav */}
         <div className="flex items-center space-x-4">
           <Link href="/" className="flex items-center space-x-2">
             <Image
@@ -18,15 +24,20 @@ export function SiteHeader() {
               alt={`${siteConfig.name} Logo`}
               width={64}
               height={64}
-              className="h-20 w-auto"
+              className="h-12 w-auto sm:h-16"
             />
-            <span className="font-bold text-xl">{siteConfig.name}</span>
+            <span className="font-bold text-lg sm:text-xl">{siteConfig.name}</span>
           </Link>
-          <MainNav items={siteConfig.mainNav} />
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <MainNav items={siteConfig.mainNav} />
+          </div>
         </div>
-        <div className="flex flex-1 items-center justify-end space-x-4">
+
+        {/* Desktop Contact Info and Actions */}
+        <div className="hidden md:flex items-center space-x-4">
           <nav className="flex items-center space-x-4">
-            <div className="hidden md:flex items-center space-x-4 text-sm text-muted-foreground">
+            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
               <Link href={siteConfig.links.phone} className="flex items-center space-x-1 hover:text-foreground">
                 <Phone className="h-4 w-4" />
                 <span>817-821-1877</span>
@@ -45,7 +56,69 @@ export function SiteHeader() {
             <ThemeToggle />
           </nav>
         </div>
+
+        {/* Mobile Menu Button */}
+        <div className="flex items-center space-x-2 md:hidden">
+          <Link
+            href={siteConfig.links.quote}
+            className={buttonVariants({ size: "sm" })}
+          >
+            Quote
+          </Link>
+          <ThemeToggle />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 text-muted-foreground hover:text-foreground"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-t bg-background">
+          <div className="container px-4 py-4 space-y-4">
+            {/* Mobile Navigation */}
+            <nav className="flex flex-col space-y-2">
+              {siteConfig.mainNav.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </nav>
+            
+            {/* Mobile Contact Info */}
+            <div className="pt-4 border-t space-y-3">
+              <Link 
+                href={siteConfig.links.phone} 
+                className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-foreground"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Phone className="h-4 w-4" />
+                <span>817-821-1877</span>
+              </Link>
+              <Link 
+                href={siteConfig.links.email} 
+                className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-foreground"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Mail className="h-4 w-4" />
+                <span>tim@dfirepro.com</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

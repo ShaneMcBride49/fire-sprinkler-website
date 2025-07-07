@@ -67,7 +67,7 @@ ${formData.description}
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Header */}
       <div className="bg-white dark:bg-slate-950 border-b">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 py-4 sm:py-6">
           <Link 
             href="/" 
             className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-4"
@@ -75,53 +75,53 @@ ${formData.description}
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Link>
-          <h1 className="text-3xl font-bold tracking-tight">Get Your Quote</h1>
-          <p className="text-muted-foreground mt-2">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Get Your Quote</h1>
+          <p className="text-muted-foreground mt-2 text-sm sm:text-base">
             Tell us about your project and we'll provide a comprehensive quote for your fire protection needs.
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 lg:grid-cols-3">
-          {/* Contact Info */}
-          <div className="lg:col-span-1">
+      <div className="container mx-auto px-4 py-8 sm:py-12">
+        <div className="grid gap-6 lg:gap-8 lg:grid-cols-3">
+          {/* Contact Info - Mobile First */}
+          <div className="lg:col-span-1 order-2 lg:order-1">
             <Card>
               <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-lg sm:text-xl">Contact Information</CardTitle>
+                <CardDescription className="text-sm">
                   Get in touch with us directly for immediate assistance.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-blue-600" />
-                  <div>
-                    <p className="font-medium">Phone</p>
+                  <Phone className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <div className="min-w-0">
+                    <p className="font-medium text-sm sm:text-base">Phone</p>
                     <Link 
                       href={siteConfig.links.phone}
-                      className="text-sm text-muted-foreground hover:text-foreground"
+                      className="text-sm text-muted-foreground hover:text-foreground break-all"
                     >
                       817-821-1877
                     </Link>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-blue-600" />
-                  <div>
-                    <p className="font-medium">Email</p>
+                  <Mail className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <div className="min-w-0">
+                    <p className="font-medium text-sm sm:text-base">Email</p>
                     <Link 
                       href={`mailto:${siteConfig.links.email}`}
-                      className="text-sm text-muted-foreground hover:text-foreground"
+                      className="text-sm text-muted-foreground hover:text-foreground break-all"
                     >
                       {siteConfig.links.email}
                     </Link>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Building className="h-5 w-5 text-blue-600" />
-                  <div>
-                    <p className="font-medium">Service Area</p>
+                  <Building className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <div className="min-w-0">
+                    <p className="font-medium text-sm sm:text-base">Service Area</p>
                     <p className="text-sm text-muted-foreground">
                       Texas and surrounding states
                     </p>
@@ -130,9 +130,9 @@ ${formData.description}
               </CardContent>
             </Card>
 
-            <Card className="mt-6">
+            <Card className="mt-4 sm:mt-6">
               <CardHeader>
-                <CardTitle>What We Need</CardTitle>
+                <CardTitle className="text-lg sm:text-xl">What We Need</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -146,20 +146,20 @@ ${formData.description}
             </Card>
           </div>
 
-          {/* Quote Form */}
-          <div className="lg:col-span-2">
+          {/* Quote Form - Mobile First */}
+          <div className="lg:col-span-2 order-1 lg:order-2">
             <Card>
               <CardHeader>
-                <CardTitle>Project Information</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-lg sm:text-xl">Project Information</CardTitle>
+                <CardDescription className="text-sm">
                   Please provide as much detail as possible to help us give you an accurate quote.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Contact Information */}
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="sm:col-span-2 sm:col-start-1">
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
                         Full Name *
                       </label>
@@ -170,7 +170,7 @@ ${formData.description}
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       />
                     </div>
                     <div>
@@ -184,7 +184,7 @@ ${formData.description}
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       />
                     </div>
                     <div>
@@ -198,10 +198,10 @@ ${formData.description}
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       />
                     </div>
-                    <div>
+                    <div className="sm:col-span-2">
                       <label htmlFor="company" className="block text-sm font-medium mb-2">
                         Company Name
                       </label>
@@ -211,14 +211,14 @@ ${formData.description}
                         name="company"
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       />
                     </div>
                   </div>
 
                   {/* Project Details */}
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="sm:col-span-2">
                       <label htmlFor="projectType" className="block text-sm font-medium mb-2">
                         Project Type *
                       </label>
@@ -228,7 +228,7 @@ ${formData.description}
                         required
                         value={formData.projectType}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       >
                         <option value="">Select project type</option>
                         <option value="new-installation">New Installation</option>
@@ -240,7 +240,7 @@ ${formData.description}
                         <option value="other">Other</option>
                       </select>
                     </div>
-                    <div>
+                    <div className="sm:col-span-2">
                       <label htmlFor="buildingType" className="block text-sm font-medium mb-2">
                         Building Type *
                       </label>
@@ -250,7 +250,7 @@ ${formData.description}
                         required
                         value={formData.buildingType}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       >
                         <option value="">Select building type</option>
                         <option value="hotel-3-story">3-Story Hotel</option>
@@ -273,7 +273,7 @@ ${formData.description}
                         min="1"
                         value={formData.floors}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       />
                     </div>
                     <div>
@@ -287,10 +287,10 @@ ${formData.description}
                         min="1"
                         value={formData.squareFootage}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       />
                     </div>
-                    <div>
+                    <div className="sm:col-span-2">
                       <label htmlFor="timeline" className="block text-sm font-medium mb-2">
                         Project Timeline
                       </label>
@@ -299,7 +299,7 @@ ${formData.description}
                         name="timeline"
                         value={formData.timeline}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       >
                         <option value="">Select timeline</option>
                         <option value="immediate">Immediate (Emergency)</option>
@@ -325,18 +325,18 @@ ${formData.description}
                       value={formData.description}
                       onChange={handleInputChange}
                       placeholder="Please describe your project, current fire protection system status, specific requirements, and any other relevant details..."
-                      className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                      className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none text-sm sm:text-base"
                     />
                   </div>
 
                   {/* Submit Button */}
-                  <div className="flex justify-end">
+                  <div className="flex justify-center sm:justify-end">
                     <button
                       type="submit"
                       disabled={isSubmitting}
                       className={buttonVariants({ 
                         size: "lg", 
-                        className: "px-8 py-3"
+                        className: "w-full sm:w-auto px-8 py-3"
                       })}
                     >
                       {isSubmitting ? (
