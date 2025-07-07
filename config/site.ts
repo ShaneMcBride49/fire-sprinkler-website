@@ -1,18 +1,30 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "D Fire Pro",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Specialized fire protection services for three-, four-, and five-story hotels. Expert installation, maintenance, and compliance solutions.",
   mainNav: [
     {
       title: "Home",
       href: "/",
     },
+    {
+      title: "Services",
+      href: "/#services",
+    },
+    {
+      title: "Resources",
+      href: "/#resources",
+    },
+    {
+      title: "Contact",
+      href: "/#contact",
+    },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    phone: "tel:+1-817-821-1877",
+    email: "tim@dfirepro.com",
+    quote: "/quote",
   },
 }
