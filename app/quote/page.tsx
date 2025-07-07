@@ -123,7 +123,7 @@ ${formData.description}
                   <div className="min-w-0">
                     <p className="font-medium text-sm sm:text-base">Service Area</p>
                     <p className="text-sm text-muted-foreground">
-                      Texas and surrounding states
+                      Nationwide
                     </p>
                   </div>
                 </div>
